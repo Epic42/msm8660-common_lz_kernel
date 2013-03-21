@@ -674,9 +674,9 @@ static ssize_t show_UV_mV_table(struct cpufreq_policy *policy, char *buf) {
 static ssize_t store_UV_mV_table(struct cpufreq_policy *policy,
 					const char *buf, size_t count) {
 
-	printk(KERN_DEBUG "store_UV_mV_table received:|%s|", buf);
-
 	unsigned int ret = -EINVAL;
+
+	printk(KERN_DEBUG "store_UV_mV_table received:|%s|", buf);
 
 	ret = sscanf(buf, "%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d %d", 
 			&exp_UV_mV[0], &exp_UV_mV[1], &exp_UV_mV[2], &exp_UV_mV[3], &exp_UV_mV[4], &exp_UV_mV[5], 
@@ -707,8 +707,7 @@ static ssize_t show_frequency_voltage_table(struct cpufreq_policy *policy, char 
 #define AOKP_UV_HACK
 #ifdef AOKP_UV_HACK
 
-static ssize_t store_frequency_voltage_table(struct cpufreq_policy *policy,
-					     const char *buf, size_t count) {
+static ssize_t store_frequency_voltage_table(struct cpufreq_policy *policy, const char *buf, size_t count) {
 
 	printk(KERN_DEBUG "store_frequency_voltage_table received:|%s|", buf);
 
@@ -745,11 +744,15 @@ static ssize_t store_states_enabled_table(struct cpufreq_policy *policy, const c
 static ssize_t show_cpuinfo_max_mV(struct cpufreq_policy *policy, char *buf)
 {
 	sprintf(buf, "%u\n", CPUMVMAX);
+
+		return -EINVAL;
 }
 
 static ssize_t show_cpuinfo_min_mV(struct cpufreq_policy *policy, char *buf)
 {
 	sprintf(buf, "%u\n", CPUMVMIN);
+
+		return -EINVAL;
 }
 
 cpufreq_freq_attr_ro_perm(cpuinfo_cur_freq, 0400);
