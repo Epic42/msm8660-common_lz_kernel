@@ -1,5 +1,11 @@
-/* Tweaked my Thomas.Raines 
- * Only give sleepers 50% of their service deficit. This allows
+/* Tweaked my Thomas.Raines  */
+
+/*
+ * Enable child runs first
+ */
+SCHED_FEAT(SCHED_CHILD_RUNS_FIRST, 1)
+
+/* Only give sleepers 50% of their service deficit. This allows
  * them to run sooner, but does not allow tons of sleepers to
  * rip the spread apart.
  */

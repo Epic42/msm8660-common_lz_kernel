@@ -99,8 +99,6 @@ enum
 	KERN_SPARC_REBOOT=21,	/* reboot command on Sparc */
 	KERN_CTLALTDEL=22,	/* int: allow ctl-alt-del to reboot */
 	KERN_PRINTK=23,		/* struct: control printk logging parameters */
-	KERN_SCHED_LATENCY_NS=400000,		/* adjusts latency */
-	KERN_SCHED_WAKEUP_GRANULARITY_NS=100000,		/* adjusts wakeup speed */
 	KERN_NAMETRANS=24,	/* Name translation */
 	KERN_PPC_HTABRECLAIM=25, /* turn htab reclaimation on/off on PPC */
 	KERN_PPC_ZEROPAGED=26,	/* turn idle page zeroing on/off on PPC */
@@ -171,7 +169,7 @@ enum
 	VM_UNUSED1=1,		/* was: struct: Set vm swapping control */
 	VM_UNUSED2=2,		/* was; int: Linear or sqrt() swapout for hogs */
 	VM_UNUSED3=3,		/* was: struct: Set free page thresholds */
-	VM_UNUSED4=4,		/* Spare */
+	VM_MAX_READAHEAD=4096,		/* Raising readahead cache size */
 	VM_OVERCOMMIT_MEMORY=1,	/* Turn off the virtual memory safety limit */
 	VM_UNUSED5=6,		/* was: struct: Set buffer memory thresholds */
 	VM_DROP_CACHES=3,		/* Set cache memory thresholds */
@@ -206,6 +204,7 @@ enum
 	VM_MIN_SLAB=35,		 /* Percent pages ignored by zone reclaim */
 	VM_MIN_FREE_ORDER_SHIFT=4,		/* Battery enhancement related */
 	VM_OOM_DUMP_TASKS=1,		/* Number of tasks to dump when out of memory*/
+	VM_PAGE_CACHE_SIZE=4096,     /* Sets page cache size*/
 };
 
 
