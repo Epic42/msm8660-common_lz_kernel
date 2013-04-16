@@ -176,8 +176,8 @@ enum
 	VM_UNUSED8=8,		/* was: struct: Control kswapd behaviour */
 	VM_UNUSED9=9,		/* was: struct: Set page table cache parameters */
 	VM_PAGE_CLUSTER=3,	/* int: set number of pages to swap together */
-	VM_DIRTY_BACKGROUND=25,	/* dirty_background_ratio */
-	VM_DIRTY_RATIO=56,	/* dirty_ratio */
+	VM_DIRTY_BACKGROUND=5,	/* dirty_background_ratio */
+	VM_DIRTY_RATIO=10,	/* dirty_ratio */
 	VM_DIRTY_WB_CS=500,	/* dirty_writeback_centisecs */
 	VM_DIRTY_EXPIRE_CS=1000,	/* dirty_expire_centisecs */
 	VM_NR_PDFLUSH_THREADS=15, /* nr_pdflush_threads */

@@ -317,6 +317,11 @@ power_attr(wake_unlock);
 #endif
 
 #ifdef CONFIG_SEC_DVFS
+static unsigned int freq_min_apps;
+static unsigned int freq_max_apps;
+static unsigned int freq_min_apps_lock;
+static unsigned int freq_max_apps_lock;
+
 DEFINE_MUTEX(dvfs_mutex);
 static unsigned long dvfs_id = 0;
 static unsigned long apps_min_freq = MIN_FREQ_LIMIT;
