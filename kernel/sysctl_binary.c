@@ -159,7 +159,7 @@ static const struct bin_table bin_vm_table[] = {
 	{ CTL_INT,	VM_LAPTOP_MODE,			"laptop_mode" },
 	{ CTL_INT,	VM_BLOCK_DUMP,			"block_dump" },
 	{ CTL_INT,	VM_HUGETLB_GROUP,		"hugetlb_shm_group" },
-	{ CTL_INT,	VM_VFS_CACHE_PRESSURE,	"vfs_cache_pressure" },
+	{ CTL_INT,	VM_VFS_CACHE_PRESSURE,		"vfs_cache_pressure" },
 	{ CTL_INT,	VM_LEGACY_VA_LAYOUT,		"legacy_va_layout" },
 	/* VM_SWAP_TOKEN_TIMEOUT unused */
 	{ CTL_INT,	VM_DROP_PAGECACHE,		"drop_caches" },
@@ -169,7 +169,8 @@ static const struct bin_table bin_vm_table[] = {
 	{ CTL_INT,	VM_PANIC_ON_OOM,		"panic_on_oom" },
 	{ CTL_INT,	VM_VDSO_ENABLED,		"vdso_enabled" },
 	{ CTL_INT,	VM_MIN_SLAB,			"min_slab_ratio" },
-
+	/* Additional LZ tweaks */
+	{ CTL_INT,	VM_MAX_READAHEAD,		"max_readahead" },
 	{}
 };
 

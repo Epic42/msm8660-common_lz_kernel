@@ -16,7 +16,20 @@
 #include <linux/backing-dev.h>
 #include <linux/task_io_accounting_ops.h>
 #include <linux/pagevec.h>
-#include <linux/pagemap.h>
+#include <linux/pagemap.h> 
+
+unsigned long vm_max_readahead = INITIAL_VM_MAX_READAHEAD;
+
+int sysctl_vm_max_readahead_handler(struct ctl_table *table, int write,
+		void __user *buffer, size_t *length, loff_t *ppos)
+{
+	proc_doulongvec_minmax(table, write, buffer, length, ppos);
+
+	default_backing_dev_info.ra_pages =
+			vm_max_readahead >> (PAGE_CACHE_SHIFT - 10);
+
+	return 0;
+}
 
 /*
  * Initialise a struct file's readahead state.  Assumes that the caller has

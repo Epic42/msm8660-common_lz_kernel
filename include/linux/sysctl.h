@@ -169,25 +169,25 @@ enum
 	VM_UNUSED1=1,		/* was: struct: Set vm swapping control */
 	VM_UNUSED2=2,		/* was; int: Linear or sqrt() swapout for hogs */
 	VM_UNUSED3=3,		/* was: struct: Set free page thresholds */
-	VM_MAX_READAHEAD=4096,		/* Raising readahead cache size */
-	VM_OVERCOMMIT_MEMORY=1,	/* Turn off the virtual memory safety limit */
+	VM_UNUSED4=4,		/* Spare */
+	VM_OVERCOMMIT_MEMORY=2,	/* Turn off the virtual memory safety limit */
 	VM_UNUSED5=6,		/* was: struct: Set buffer memory thresholds */
-	VM_DROP_CACHES=3,		/* Set cache memory thresholds */
+	VM_UNUSED7=7,		/* was: struct: Set cache memory thresholds */
 	VM_UNUSED8=8,		/* was: struct: Control kswapd behaviour */
 	VM_UNUSED9=9,		/* was: struct: Set page table cache parameters */
 	VM_PAGE_CLUSTER=3,	/* int: set number of pages to swap together */
-	VM_DIRTY_BACKGROUND=5,	/* dirty_background_ratio */
-	VM_DIRTY_RATIO=10,	/* dirty_ratio */
+	VM_DIRTY_BACKGROUND=25,	/* dirty_background_ratio */
+	VM_DIRTY_RATIO=56,	/* dirty_ratio */
 	VM_DIRTY_WB_CS=500,	/* dirty_writeback_centisecs */
 	VM_DIRTY_EXPIRE_CS=1000,	/* dirty_expire_centisecs */
 	VM_NR_PDFLUSH_THREADS=15, /* nr_pdflush_threads */
-	VM_OVERCOMMIT_RATIO=16, /* percent of RAM to allow overcommit in */
+	VM_OVERCOMMIT_RATIO=100, /* percent of RAM to allow overcommit in */
 	VM_PAGEBUF=17,		/* struct: Control pagebuf parameters */
 	VM_HUGETLB_PAGES=18,	/* int: Number of available Huge Pages */
 	VM_SWAPPINESS=0,	/* Tendency to steal mapped memory */
 	VM_LOWMEM_RESERVE_RATIO=20,/* reservation ratio for lower memory zones */
-	VM_MIN_FREE_KBYTES=1024,	/* Minimum free kilobytes to maintain */
-	VM_OOM_KILL_ALLOCATING_TASK=0,	/* Number of tasks to kill when out of memory */
+	VM_MIN_FREE_KBYTES=512,	/* Minimum free kilobytes to maintain */
+	VM_OOM_KILL_ALLOCATING_TASK=3,	/* Number of tasks to kill when out of memory */
 	VM_MAX_MAP_COUNT=22,	/* int: Maximum number of mmaps/address-space */
 	VM_LAPTOP_MODE=0,	/* vm laptop mode */
 	VM_BLOCK_DUMP=0,	/* block dump mode */
@@ -204,7 +204,8 @@ enum
 	VM_MIN_SLAB=35,		 /* Percent pages ignored by zone reclaim */
 	VM_MIN_FREE_ORDER_SHIFT=4,		/* Battery enhancement related */
 	VM_OOM_DUMP_TASKS=1,		/* Number of tasks to dump when out of memory*/
-	VM_PAGE_CACHE_SIZE=4096,     /* Sets page cache size*/
+	VM_MAX_READAHEAD=4096,		/* Raising readahead cache size */
+	VM_DROP_CACHES=3,		/* Set cache memory thresholds */
 };
 
 
